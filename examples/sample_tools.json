@@ -1,0 +1,46 @@
+[
+  {
+    "name": "run_shell_command",
+    "description": "This tool is used by the autonomous coding agent whenever it needs to execute a terminal command in the operating system environment. You should make sure that the command is safe to execute, does not cause destructive data loss, and is appropriate for the current platform.",
+    "parameters": {
+      "type": "object",
+      "title": "RunShellCommandParameters",
+      "properties": {
+        "command": {
+          "type": "string",
+          "title": "CommandLineString",
+          "description": "The exact string representing the terminal shell command line to run inside the host operating system shell. Ensure arguments are escaped."
+        },
+        "timeout_seconds": {
+          "type": "integer",
+          "title": "TimeoutDurationInSeconds",
+          "description": "Optional maximum number of seconds to wait before terminating the running command process if it takes too long to complete.",
+          "default": 30
+        }
+      },
+      "required": ["command"]
+    }
+  },
+  {
+    "name": "search_filesystem",
+    "description": "Recursively searches the workspace directory tree looking for files matching specific regex patterns or substring matches.",
+    "parameters": {
+      "type": "object",
+      "title": "SearchFileSystemParameters",
+      "properties": {
+        "query": {
+          "type": "string",
+          "title": "SearchQueryString",
+          "description": "The target filename, glob pattern, or regular expression pattern used to match files across the directory tree."
+        },
+        "max_results": {
+          "type": "integer",
+          "title": "MaxResultsLimit",
+          "description": "Maximum number of file path matches to return back in the result array.",
+          "default": 50
+        }
+      },
+      "required": ["query"]
+    }
+  }
+]

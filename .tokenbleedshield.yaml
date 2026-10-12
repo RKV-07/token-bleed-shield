@@ -1,0 +1,25 @@
+# Token Bleed Shield: Preventive Policy Configuration
+prober:
+  prefer_uv: true
+  prefer_pnpm: true
+  include_git_info: true
+  include_os_details: true
+  contract_filename: ".agent-env.md"
+
+tool_linter:
+  strip_titles: true
+  strip_examples: false
+  max_description_length: 140
+  prune_empty_fields: true
+
+budget_gate:
+  max_context_tokens: 32000
+  warn_threshold_tokens: 24000
+  char_per_token_ratio: 3.8
+  reject_oversized: false
+
+circuit_breaker:
+  max_consecutive_same_tools: 2
+  max_identical_tool_args: 1
+  max_consecutive_errors: 3
+  sliding_window_size: 6

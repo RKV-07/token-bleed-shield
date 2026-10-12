@@ -1,0 +1,4 @@
+{"tool_name": "run_shell_command", "arguments": {"command": "python -m unittest"}, "return_code": 1, "error_message": "python: command not found"}
+{"tool_name": "run_shell_command", "arguments": {"command": "which python"}, "return_code": 1, "error_message": "which: not found"}
+{"tool_name": "run_shell_command", "arguments": {"command": "where python.exe"}, "return_code": 1, "error_message": "INFO: Could not find files"}
+{"tool_name": "run_shell_command", "arguments": {"command": "where python.exe"}, "return_code": 1, "error_message": "INFO: Could not find files"}
